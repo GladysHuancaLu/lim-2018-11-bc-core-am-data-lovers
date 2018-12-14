@@ -40,24 +40,14 @@ const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('tipo');
 for(let i = 0; i < arrayTiposUnicos.length; i++){
-  listaTipos.innerHTML += `<option >${arrayTiposUnicos[i]}</option>`
-
+  listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
 
+console.log(listaTipos.value);
 
-function mostrar (tipo){
-  const containerlist = document.getElementById("pokemon");
-  let list  = '';
-  filtrarTipo(tipo).forEach((pokemones)  =>  {
-    const li  = `<li>${pokemones.name}</li>`  + `<img src="${pokemones.img}">`;
-    list  = list  + li;
-    
-  })
-  containerlist.innerHTML = list;
-    
-}
 
-mostrar("Grass");
+
+//mostrar(listaTipos.value);
 
 /*
 let list  = '';
@@ -68,3 +58,15 @@ filtrarTipo('Electric').forEach((pokemones)  =>  {
 containerlist.innerHTML = list;
 */
 
+listaTipos.addEventListener("change", mostrar);
+function mostrar (){
+  const containerlist = document.getElementById("pokemon");
+  let list  = '';
+  filtrarTipo(listaTipos.value).forEach((pokemones)  =>  {
+    const li  = `<li>${pokemones.name}</li>`  + `<img src="${pokemones.img}">`;
+    list  = list  + li;
+    
+  })
+  containerlist.innerHTML = list;
+    
+}
