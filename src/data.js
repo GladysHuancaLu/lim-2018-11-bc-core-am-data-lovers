@@ -1,5 +1,6 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+
+document.getElementById("demo").innerHTML = POKEMON.pokemon[0].weaknesses;
+
 /*
 const example = () => {
   return 'example';
