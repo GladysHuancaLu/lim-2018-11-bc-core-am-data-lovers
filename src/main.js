@@ -60,7 +60,7 @@ for(let i = 0; i < arrayTiposUnicos.length; i++){
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
 
-
+//console.log(newArr2)ss
 listaTipos.addEventListener("change", mostrar);
 function mostrar (){
   const containerlist = document.getElementById("pokemon");
@@ -75,12 +75,35 @@ function mostrar (){
           <h3 class="post-category">${ pokemones.type }</h3>
         </div>
       </article>
+      <article class="oculto">
+        <h5 class="post-category">Altura: ${ pokemones.height }</h5>
+        <h5 class="post-category">Peso: ${ pokemones.weight }</h5>
+        <h5 class="post-category">Candy: ${ pokemones.candy }</h5>
+        <h5 class="post-category">Egg: ${ pokemones.egg }</h5>
+      </article>
     </div>
   `;
     list  = list  + card;
+
   })
   containerlist.innerHTML = list;
 }
+
+const espacioDespliegue=document.getElementsByClassName("card-link");
+for (i = 0; i < espacioDespliegue.length; i++) {
+  console.log(espacioDespliegue)
+  epacioDespliegue[i].addEventListener("click", function() {
+    const articuloDesplegable = getElementsByClassName("oculto")
+    if (articuloDesplegable.style.display === "block") {
+      articuloDesplegable.style.display = "none";
+    } else {
+      articuloDesplegable.style.display = "block";
+    }
+  });
+}
+
+
+
 
 /*
 const ordenarAscendente = () => {
