@@ -5,29 +5,29 @@ const firstWindow = document.getElementById("firstWindowPokemon");
 // llamando a la segunda pantalla general
 const secondWindow = document.getElementById("secondWindowPokemon");
 //  llamando a la segunda pantalla para ordenar
-const classifyPokemon = document.getElementById("orderingPokemon");
-// llamando a la tercera pantalla general
-const thirdWindow = document.getElementById("hidingSecondTime");
-const faceDebilidades = document.getElementById("windowDebilidades");
-const buttonDebilidades = document.getElementById("debilidades");
-// llamando a la cuarta pantalla general
-const fourthWindow = document.getElementById("hidingThirdTime");
-// boton de tipos
-const windowTypesPokemon = document.getElementById("typesPokemonImg");
-const buttonTypes = document.getElementById("typesPokemon");
-// la cuarta pantalla
-const evolutionPokemonCandies = document.getElementById("candy");
-const buttonEvolution = document.getElementById("candyPokemon");
+// const classifyPokemon = document.getElementById("orderingPokemon");
+// // llamando a la tercera pantalla general
+// const thirdWindow = document.getElementById("hidingSecondTime");
+// const faceDebilidades = document.getElementById("windowDebilidades");
+// const buttonDebilidades = document.getElementById("debilidades");
+// // llamando a la cuarta pantalla general
+// const fourthWindow = document.getElementById("hidingThirdTime");
+// // boton de tipos
+// const windowTypesPokemon = document.getElementById("typesPokemonImg");
+// const buttonTypes = document.getElementById("typesPokemon");
+// // la cuarta pantalla
+// const evolutionPokemonCandies = document.getElementById("candy");
+// const buttonEvolution = document.getElementById("candyPokemon");
 // ocultando la segunda pantalla general
-//secondWindow.style.display = "none";
+secondWindow.style.display = "none";
 // agregando el evento al primer boton
-/*
+
 firstButton.addEventListener("click",function(){
   firstWindow.style.display= "none";
   secondWindow.style.display = "block";
-  thirdWindow.style.display = "none";
+  // thirdWindow.style.display = "none";
 });
-*/
+
 
 //la tercera pantalla 
 /*
@@ -55,7 +55,7 @@ buttonEvolution.addEventListener("click",function(){
 //console.table(POKEMON);
 const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
-const listaTipos = document.getElementById('tipo');
+const listaTipos = document.getElementById('typesPokemon');
 for(let i = 0; i < arrayTiposUnicos.length; i++){
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
