@@ -19,50 +19,39 @@ const buttonTypes = document.getElementById("typesPokemon");
 const evolutionPokemonCandies = document.getElementById("candy");
 const buttonEvolution = document.getElementById("candyPokemon");
 // ocultando la segunda pantalla general
-secondWindow.style.display = "none";
+//secondWindow.style.display = "none";
 // agregando el evento al primer boton
+/*
 firstButton.addEventListener("click",function(){
   firstWindow.style.display= "none";
   secondWindow.style.display = "block";
   thirdWindow.style.display = "none";
 });
-
+*/
 
 //la tercera pantalla 
+/*
  buttonDebilidades.addEventListener("click", function(){
  thirdWindow.style.display = "block";
  classifyPokemon.style.display = "none";
  fourthWindow.style.display = "none";
  });
+ */
 // trabajando con la cuarta pantalla 
+/*
 buttonTypes.addEventListener("click",function(){
 fourthWindow.style.display = "block";
 faceDebilidades.style.display = "none";
 evolutionPokemonCandies.style.display = "none";
+});
+*/
 // trabajando con la quinta pantalla
+/*
 buttonEvolution.addEventListener("click",function(){
   evolutionPokemonCandies.style.display = "block";
   windowTypesPokemon.style.display = "none";
-
-<<<<<<< HEAD
-/* Creamos una función que agrege la propiedad age a
-todos los elementos de un array y retorna un nuevo array */
-/*
-const newArr= [];
- for(let i = 0; i < POKEMON.pokemon.length; i++){
-   newArr.push(POKEMON.pokemon[i].name)
- }
+});
 */
-
-/*
-const newArr2 = POKEMON.pokemon.filter((pokemon) => {
-  return ((pokemon.type[0] === "Poison" )||(pokemon.type[1] === "Poison")||(pokemon.type[2] === "Poison"));
-})
-*/
-
-
-
-
 //console.table(POKEMON);
 const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
@@ -92,8 +81,12 @@ function mostrar (){
   })
   containerlist.innerHTML = list;
 }
-=======
-})
 
-})
->>>>>>> f6c6866017921434f6f121aa7e24888635c288ac
+/*
+const ordenarAscendente = () => {
+  const textoNombre = document.getElementById("nombre");
+  let arrOrdenado = arrLol.map( arrLol => arrLol.name).sort();
+  return textoNombre.innerHTML = arrOrdenado;
+ };
+POKEMON.pokemon.name.sort()
+*/
