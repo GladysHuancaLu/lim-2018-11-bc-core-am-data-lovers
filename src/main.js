@@ -9,10 +9,7 @@ todos los elementos de un array y retorna un nuevo array */
 const newArr= [];
  for(let i = 0; i < POKEMON.pokemon.length; i++){
    newArr.push(POKEMON.pokemon[i].name)
-
  }
-
-console.log(newArr);
 */
 
 /*
@@ -20,17 +17,6 @@ const newArr2 = POKEMON.pokemon.filter((pokemon) => {
   return ((pokemon.type[0] === "Poison" )||(pokemon.type[1] === "Poison")||(pokemon.type[2] === "Poison"));
 })
 */
-
-
-const filtrarTipo= (tipo) =>{
-
- 
-  const newArr2= POKEMON.pokemon.filter((pokemon) => {
-   return ((pokemon.type[0] === tipo )||(pokemon.type[1] === tipo)||(pokemon.type[2] === tipo));
- })
- return newArr2;
-}
-
 
 
 
@@ -43,30 +29,24 @@ for(let i = 0; i < arrayTiposUnicos.length; i++){
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
 
-console.log(listaTipos.value);
-
-
-
-//mostrar(listaTipos.value);
-
-/*
-let list  = '';
-filtrarTipo('Electric').forEach((pokemones)  =>  {
-  const li  = `<li>${pokemones.name}</li>`  + `<img src="${pokemones.img}">`;
-  list  = list  + li;
-})
-containerlist.innerHTML = list;
-*/
 
 listaTipos.addEventListener("change", mostrar);
 function mostrar (){
   const containerlist = document.getElementById("pokemon");
   let list  = '';
-  filtrarTipo(listaTipos.value).forEach((pokemones)  =>  {
-    const li  = `<li>${pokemones.name}</li>`  + `<img src="${pokemones.img}">`;
-    list  = list  + li;
-    
+  pokemon.filtrarTipo(listaTipos.value).forEach((pokemones)  =>  {
+    const card  =`
+    <div class="card-link">
+      <article class="blog-card">
+        <img class="post-image" src="${ pokemones.img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ pokemones.name }</h4>
+          <h3 class="post-category">${ pokemones.type }</h3>
+        </div>
+      </article>
+    </div>
+  `;
+    list  = list  + card;
   })
   containerlist.innerHTML = list;
-    
 }
