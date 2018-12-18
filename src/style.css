@@ -4,12 +4,18 @@
     box-sizing: border-box;
 	font-family: helvetica Neue;
     font-weight: lighter;
+    background-image: url(../imagenes/pokemon-difuso.jpg);
+    background-size: 100vw ;
+
 }
 
 .contenedorPrincipal{
     display: flex;
     
 
+}
+#firstWindowPokemon{
+    
 }
 .menu{
 	position: fixed;

@@ -22,11 +22,11 @@ const secondWindow = document.getElementById("secondWindowPokemon");
 secondWindow.style.display = "none";
 // agregando el evento al primer boton
 
-firstButton.addEventListener("click",function(){
-  firstWindow.style.display= "none";
+firstButton.addEventListener( "click", function(){
+  firstWindow.style.display=  "none";
   secondWindow.style.display = "block";
   // thirdWindow.style.display = "none";
-});
+ });
 
 
 //la tercera pantalla 
@@ -56,7 +56,7 @@ buttonEvolution.addEventListener("click",function(){
 const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('typesPokemon');
-for(let i = 0; i < arrayTiposUnicos.length; i++){
+for (let i = 0; i < arrayTiposUnicos.length; i++) {
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
 
@@ -90,9 +90,9 @@ function mostrar (){
 }
 
 const espacioDespliegue=document.getElementsByClassName("card-link");
-for (i = 0; i < espacioDespliegue.length; i++) {
+for ( let i = 0; i < espacioDespliegue.length; i++) {
   console.log(espacioDespliegue)
-  epacioDespliegue[i].addEventListener("click", function() {
+  espacioDespliegue[i].addEventListener("click", function() {
     const articuloDesplegable = getElementsByClassName("oculto")
     if (articuloDesplegable.style.display === "block") {
       articuloDesplegable.style.display = "none";
@@ -101,9 +101,6 @@ for (i = 0; i < espacioDespliegue.length; i++) {
     }
   });
 }
-
-
-
 
 /*
 const ordenarAscendente = () => {
