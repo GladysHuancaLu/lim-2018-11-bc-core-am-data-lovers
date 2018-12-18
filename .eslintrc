@@ -35,6 +35,10 @@
     "no-const-assign": "error",
     "no-var": "error"
  },
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3722a641002de327cd654e11566abcefc11116e
   "extends": "eslint:recommended",
   "globals": {
     "example": false
