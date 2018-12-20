@@ -63,6 +63,7 @@ for (let i = 0; i < arrayTiposUnicos.length; i++) {
 //console.log(newArr2)ss
 listaTipos.addEventListener("change", mostrar);
 function mostrar (){
+  debugger;
   const containerlist = document.getElementById("pokemon");
   let list  = '';
   pokemon.filtrarTipo(listaTipos.value).forEach((pokemones)  =>  {
@@ -83,6 +84,7 @@ function mostrar (){
       </article>
     </div>
   `;
+    // const card = pokemones.name;
     list  = list  + card;
 
   })
