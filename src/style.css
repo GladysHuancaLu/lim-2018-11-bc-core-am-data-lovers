@@ -49,6 +49,7 @@ select{
     width: 19%;
     display: inline-block; 
     background: #ebebeb;
+    outline: 1px solid white;
   }
 
 .blog-card {
