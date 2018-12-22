@@ -7,25 +7,26 @@
   </head>
   <body>
     <div class="contendorPrincipal">
-
-        <div id = "firstWindowPokemon">
-           <h1>BIENVENIDOS A POKEMÓN</h1>
+      <div id = "firstWindowPokemon">
            <button id="entrada" class="black">SIGUIENTE</button>
-        </div>
+      </div>
       <div id = "secondWindowPokemon">
-           <div class="menu">
-              <select id="orderingPokemon"><option >Ordenar por...</option></select>
-              <select id="typesPokemon"><option >Elige tipo</option> </select>
-              <select id="candyPokemon"><option >Caramelos</option></select>
-              <select id="debilidades"><option >Debilidades</option></select>
-           </div>
-
-        <div class="contenedor">
-         <div id="pokemon"></div>
-
+        <div class="menu">
+         <select id="orderingPokemon"><option >Ordenar por...</option>
+           <option value="ascendente">A-Z</option>
+           <option value="descendente">Z-A</option>
+         </select>
+         <select id="typesPokemon"><option >Elige tipo</option> </select>
+         <select id="candyPokemon"><option >Caramelos</option></select>
+         <select id="debilidades"><option >Debilidades</option></select>
         </div>
-   </div>
-</div>
+
+       <div class="contenedor">
+          <div id="contFiltrar"></div>
+          <div id="contOrdenar"></div>
+       </div>
+      </div>
+    </div>
 
  
 
