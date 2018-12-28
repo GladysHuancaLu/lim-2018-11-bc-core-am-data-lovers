@@ -13,11 +13,18 @@ firstButton.addEventListener('click', function() {
 });
 
 const dataPokemon = POKEMON.pokemon;
-const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
+const arrayTiposUnicos = pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
+/*
+let textArray = [];
+for (let i = 0; i < dataPokemon.length; i++) {
+  textArray = textArray.concat(dataPokemon[i].weaknesses);
+}
+console.log(textArray);
+*/
 
 const containerlist = document.getElementById('contFiltrar');
 listaTipos.addEventListener('change', mostrar);
@@ -25,6 +32,7 @@ function mostrar() {
   let list = '';
   const data = pokemon.filtrarTipo(listaTipos.value, dataPokemon);
   containerOrdenar.style.display = 'none';
+  containerCandy.style.display = 'none';
   containerlist.style.display = 'block';
   containerlist.innerHTML = pokemon.mostrarTemplates(data);
 };
@@ -33,13 +41,68 @@ const containerOrdenar = document.getElementById('contOrdenar');
 const listaOrdenar = document.getElementById('orderingPokemon');
 listaOrdenar.addEventListener('change', mostrarOrden);
 function mostrarOrden() {
-  let list = '';
   const data = pokemon.sortData(dataPokemon, 'name', listaOrdenar.value);
-  console.log(data);
   containerlist.style.display = 'none';
+  containerCandy.style.display = 'none';
   containerOrdenar.style.display = 'block';
   containerOrdenar.innerHTML = pokemon.mostrarTemplates(data);
 };
+
+const containerCandy = document.getElementById('contCandy');
+const btnCandy = document.getElementById('candy');
+btnCandy.addEventListener('click', () => {
+  containerOrdenar.style.display = 'none';
+  containerlist.style.display = 'none';
+  containerCandy.style.display = 'block';
+});
+
+const btnBuscar = document.getElementById('btnBuscar');
+const inputBuscar = document.getElementById('nombre');
+btnBuscar.addEventListener('click', () => {
+  const data = pokemon.filterEvolution(dataPokemon, inputBuscar.value);
+  let list = '';
+  data.forEach((pokemones) => {
+    if (data.hasOwnProperty('next_evolution')) {
+      const card = `
+     <div class ='card-link'>
+      <article class ='blog-card'>
+        <img class="post-image" src="${ pokemones.img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ pokemones.name }</h4>
+          <h3 class="post-category">${ pokemones.type }</h3>
+        </div>
+        <div class="article-details">
+          <h3 class="post-category">Tipo de caramelo: ${ pokemones.candy }</h3>
+          <h4 class="post-title">Caramelos para evolucionar: ${pokemones.candy_count}</h4>
+        </div>
+      </article>
+      </div>
+     `;
+      list = list + card;
+    }
+    else {
+      const card = `
+     <div class ='card-link'>
+      <article class ='blog-card'>
+        <img class="post-image" src="${ pokemones.img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ pokemones.name }</h4>
+          <h3 class="post-category">${ pokemones.type }</h3>
+        </div>
+        <div class="article-details">
+          <h3 class="post-category">Tipo de caramelo: ${ pokemones.candy }</h3>
+          <h4 class="post-title">${pokemones.name} Alcanzo la maxima evolucion</h4>
+        </div>
+      </article>
+     </div>
+     `;
+      list = list + card;
+    }
+  });
+
+ containerCandy.innerHTML = list;  
+  //containerCandy.innerHTML = pokemon.mostrarTemplates(pokemon.filterEvolution(dataPokemon, inputBuscar.value));
+});
 
 /*
 const ordenarAscendente = () => {

@@ -27,7 +27,7 @@ const filtrarTipo = (tipo, arr) => {
 
 const filterData = (data, condition) => {
   const newArr2 = data.filter((pokemon) => {
-    return (condition);
+    return (pokemon.name === condition);
   });
   return newArr2;
 };
@@ -46,12 +46,43 @@ const sortData = (data, sortBy, sortOrder) => {
         return 0;
       }
     });
-  } 
-  if (sortOrder === 'ascendente') {
-    return dataOrdenada;
+    if (sortOrder === 'ascendente') {
+      return dataOrdenada;
+    }
+    else if (sortOrder === 'descendente') {
+      return dataOrdenada.reverse();
+    }
   }
-  else if (sortOrder === 'descendente') {
-    return dataOrdenada.reverse();
+  let dataOrdenadaNumero;
+  if (sortBy === 'number') {
+    dataOrdenadaNumero = data.sort((a, b) => {
+      return (parseInt(a.num) - parseInt(b.num));
+    });
+    return dataOrdenadaNumero;
+  }
+};
+
+const filterEvolution = (data, name) => {
+  const pokemonIngresado = pokemon.filterData(data, name);
+  if (pokemonIngresado[0].hasOwnProperty('next_evolution') && pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
+    const arrPokemonEvolucion = pokemonIngresado[0].next_evolution;
+    const arrPokemonDevolucion = pokemonIngresado[0].prev_evolution;
+    let arrEvoluciones = (arrPokemonEvolucion.map(obj => obj.name)).concat(arrPokemonDevolucion.map(obj => obj.name));
+    const arrEvolucionesfinal = arrEvoluciones.concat(name);
+    let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
+  } else if (pokemonIngresado[0].hasOwnProperty('next_evolution')) {
+    const arrPokemonEvolucion = pokemonIngresado[0].next_evolution;
+    let arrEvoluciones = arrPokemonEvolucion.map(obj => obj.name);
+    const arrEvolucionesfinal = arrEvoluciones.concat(name);
+    let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
+  } else if (pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
+    const arrPokemonDevolucion = pokemonIngresado[0].prev_evolution;
+    let arrEvoluciones = arrPokemonDevolucion.map(obj => obj.name);
+    const arrEvolucionesfinal = arrEvoluciones.concat(name);
+    let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
   }
 };
 
@@ -72,12 +103,13 @@ const mostrarTemplates = (data) => {
     list = list + card;
   });
   return list;
-}
+};
 
 window.pokemon = {
   obtenerTipoUnico,
   filtrarTipo,
   filterData,
   sortData,
+  filterEvolution,
   mostrarTemplates
 };
