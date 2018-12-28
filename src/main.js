@@ -61,6 +61,45 @@ const inputBuscar = document.getElementById('nombre');
 btnBuscar.addEventListener('click', () => {
   const data = pokemon.filterEvolution(dataPokemon, inputBuscar.value);
   let list = '';
+  for (let i = 0; i < data.length-1; i++) {
+    const card = `
+     <div class ='card-link'>
+      <article class ='blog-card'>
+        <img class="post-image" src="${ data[i].img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ data[i].name }</h4>
+          <h3 class="post-category">${ data[i].type }</h3>
+        </div>
+        <div class="article-details">
+          <h3 class="post-category">Tipo de caramelo: ${ data[i].candy }</h3>
+          <h4 class="post-title">Caramelos para evolucionar: ${data[i].candy_count}</h4>
+        </div>
+      </article>
+      </div>
+     `;
+    list = list + card;
+  }
+  const ultimaEvolucion = data[data.length - 1 ];
+  const card2 = `
+   <div class ='card-link'>
+    <article class ='blog-card'>
+      <img class="post-image" src="${ ultimaEvolucion.img }" />
+      <div class="article-details">
+        <h4 class="post-title">${ ultimaEvolucion.name }</h4>
+        <h3 class="post-category">${ ultimaEvolucion.type }</h3>
+      </div>
+      <div class="article-details">
+        <h3 class="post-category">Tipo de caramelo: ${ ultimaEvolucion.candy }</h3>
+        <h4 class="post-title">${ultimaEvolucion.name} Alcanzo la maxima evolucion</h4>
+      </div>
+    </article>
+    </div>
+   `;
+  list = list + card2;
+  containerCandy.innerHTML = list;
+});
+ 
+  /*
   data.forEach((pokemones) => {
     if (data.hasOwnProperty('next_evolution')) {
       const card = `
@@ -96,13 +135,14 @@ btnBuscar.addEventListener('click', () => {
       </article>
      </div>
      `;
-      list = list + card;
+      list2 = list2 + card;
     }
   });
 
- containerCandy.innerHTML = list;  
+  containerCandy.innerHTML = list + list2;  
   //containerCandy.innerHTML = pokemon.mostrarTemplates(pokemon.filterEvolution(dataPokemon, inputBuscar.value));
 });
+*/
 
 /*
 const ordenarAscendente = () => {
