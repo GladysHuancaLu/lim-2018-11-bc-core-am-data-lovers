@@ -29,3 +29,4 @@ window.pokemon = {
   obtenerTipoUnico,
   filtrarTipo
 };
+//probando git bash
