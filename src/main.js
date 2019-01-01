@@ -53,6 +53,7 @@ buttonEvolution.addEventListener("click",function(){
 });
 */
 const dataPokemon = POKEMON.pokemon;
+
 const arrayTiposUnicos =  pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
@@ -91,6 +92,10 @@ for (let i = 0; i < espacioDespliegue.length; i++) {
     }
   });
 }
+// Llamando a la función agrupando debilidades
+const callgroups = pokemon.getGroupsWeakns(dataPokemon);
+const idWeakns = document.getElementById("debilidades");
+
 
 /*
 const ordenarAscendente = () => {
