@@ -48,7 +48,7 @@ select{
     margin-bottom: 20px;
     width: 19%;
     display: inline-block; 
-    background: #ebebeb;
+    outline: 1px solid white;
   }
 
 .blog-card {
@@ -88,8 +88,3 @@ select{
     font-weight: 700;
     margin: 0 0 0.5rem 0;
   }
-  
-  
-.oculto{
-    display: none;
-}
