@@ -118,3 +118,31 @@ btnBuscar.addEventListener('click', () => {
   list = list + card2;
   containerCandy.innerHTML = list;
 });
+
+//google.charts.load('current', {'packages': ['corechart', 'table', 'sankey']});
+/*google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  let data = new google.visualization.DataTable();
+  data.addColumn('string', 'Debilidades');
+  data.addColumn('number', 'pokemones');
+  data.addRows([
+    [ '7 Debilidades', 2],
+    ['5 Debilidades', 8],
+    ['6 Debilidades', 9],
+    ['1 Debilidades', 22],
+    ['4 Debilidades', 30],
+    ['2 Debilidades', 38],
+    ['3 Debilidades', 42]
+  ]);
+  let options = {
+    'title': 'POKEMONES CON MAS DEBILIDAD',
+    hAxis: {
+      title: 'Número de debilidades',
+    },
+    vAxis: {
+      title: 'Número de Pokemones',
+    }
+  };
+  let chart = new google.visualization.ColumnChart(document.getElementById('demo'));
+  chart.draw(data, options);
+}*/
