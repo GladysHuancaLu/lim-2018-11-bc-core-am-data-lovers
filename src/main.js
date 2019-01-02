@@ -53,6 +53,10 @@ function mostrar() {
   containerlist.style.display = 'inline-flex';
   containerlist.innerHTML = pokemon.mostrarTemplates(data);
 }
+// Llamando a la función agrupando debilidades
+const callgroups = pokemon.getGroupsWeakns(dataPokemon);
+const idWeakns = document.getElementById("debilidades");
+
 
 const containerOrdenar = document.getElementById('contOrdenar');
 const listaOrdenar = document.getElementById('orderingPokemon');
