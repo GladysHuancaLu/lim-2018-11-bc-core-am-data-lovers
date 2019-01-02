@@ -4,6 +4,22 @@ const example = () => {
 };
 window.example = example;
 */
+// const map1 = array1.map(x => x * 2);
+//const result = words.filter(word => word.length > 6);
+
+let newArr1 = [];
+const ordering = (data) => {
+  data.forEach((obj) => {
+    newArr1.push(obj.name);
+  });
+  const dataOrdenada = newArr1.sort();
+ 
+  // const result = dataOrdenada.map((string) => { 
+  //   data.filter(elemento => elemento.name === string); 
+  // });
+}; 
+
+
 const obtenerTipoUnico = (arr) => {
   let newArr = [];
   let typesUniques = [];
@@ -27,5 +43,6 @@ const filtrarTipo = (tipo, arr) => {
 
 window.pokemon = {
   obtenerTipoUnico,
-  filtrarTipo
+  filtrarTipo,
+  ordering
 };
