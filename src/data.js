@@ -48,9 +48,10 @@ const filterData = (data, condition) => {
   return newArr2;
 };
 
+/*
 const sortData = (data, sortBy, sortOrder) => {
   let dataOrdenada;
-  if (sortBy === 'name') {
+  if (sortBy === 'nameAsc') {
     dataOrdenada = data.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
@@ -68,7 +69,9 @@ const sortData = (data, sortBy, sortOrder) => {
     else if (sortOrder === 'descendente') {
       return dataOrdenada.reverse();
     }
+    return dataOrdenada;
   }
+  else if()
   let dataOrdenadaNumero;
   if (sortBy === 'number') {
     dataOrdenadaNumero = data.sort((a, b) => {
@@ -76,6 +79,52 @@ const sortData = (data, sortBy, sortOrder) => {
     });
     return dataOrdenadaNumero;
   }
+};
+*/
+const sortData = (data, sortBy) => {
+  let dataOrdenada;
+  switch (sortBy) {
+  case 'nameAsc':
+    dataOrdenada = data.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      else if (a.name < b.name) {
+        return -1;
+      }
+      else {
+        return 0;
+      }
+    });
+    break;
+  case 'nameDsc':
+    dataOrdenada = data.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      else if (a.name < b.name) {
+        return -1;
+      }
+      else {
+        return 0;
+      }
+    });
+    dataOrdenada = dataOrdenada.reverse();
+    
+    break;
+  case 'numberAsc':
+    dataOrdenada = data.sort((a, b) => {
+      return (parseInt(a.num) - parseInt(b.num));
+    });
+    break;
+  case 'numberDesc':
+    dataOrdenada = data.sort((a, b) => {
+      return (parseInt(a.num) - parseInt(b.num));
+    });
+    dataOrdenada = dataOrdenada.reverse();
+    break;
+  }
+  return dataOrdenada;
 };
 
 const filterEvolution = (data, name) => {
@@ -86,19 +135,19 @@ const filterEvolution = (data, name) => {
     let arrEvoluciones = (arrPokemonEvolucion.map(obj => obj.name)).concat(arrPokemonDevolucion.map(obj => obj.name));
     const arrEvolucionesfinal = arrEvoluciones.concat(name);
     let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
-    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'numberAsc');
   } else if (pokemonIngresado[0].hasOwnProperty('next_evolution')) {
     const arrPokemonEvolucion = pokemonIngresado[0].next_evolution;
     let arrEvoluciones = arrPokemonEvolucion.map(obj => obj.name);
     const arrEvolucionesfinal = arrEvoluciones.concat(name);
     let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
-    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'numberAsc');
   } else if (pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
     const arrPokemonDevolucion = pokemonIngresado[0].prev_evolution;
     let arrEvoluciones = arrPokemonDevolucion.map(obj => obj.name);
     const arrEvolucionesfinal = arrEvoluciones.concat(name);
     let filtradoEvoluciones = arrEvolucionesfinal.map((string) => {return pokemon.filterData(data, string)});
-    return pokemon.sortData(filtradoEvoluciones.flat(), 'number', 'ascendente');
+    return pokemon.sortData(filtradoEvoluciones.flat(), 'numberAsc');
   }
 };
 

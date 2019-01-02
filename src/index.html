@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts/icons.css" />
   </head>
   <body>
     <div class="contendorPrincipal">
@@ -11,6 +12,18 @@
         <div id = "firstWindowPokemon">
            <h1>BIENVENIDOS A POKEMÓN</h1>
            <button id="entrada" class="black">SIGUIENTE</button>
+      </div>
+      <div class="secondWindowPokemon" id = "secondWindowPokemon">
+        <div class="menu">
+         <select class="select" id="orderingPokemon"><option >Ordenar por...</option>
+           <option value="numberAsc">Número inferior</option>
+           <option value="numberDesc">Número superior</option>
+           <option value="nameAsc">A-Z</option>
+           <option value="nameDsc">Z-A</option>
+         </select>
+         <select class="select" id="typesPokemon"><option >Elige tipo</option> </select>
+         <button class="select" id="candy">CARAMELOS Y EVOLUCIONES</button>
+         <select class="select" id="debilidades"><option >Debilidades</option></select>
         </div>
       <div id = "secondWindowPokemon">
            <div class="menu">
@@ -27,51 +40,17 @@
         <div class="contenedor">
          <div id="pokemon"></div>
 
-        </div>
-   </div>
-</div>
-
- 
-
-
-   
-
-<!-- <div id="root">
-      
-      <div id = "secondWindowPokemon">
-     
-        <div id="orderingPokemon">
-          <p>aquí estarán todos los pokemones por ordenar </p>
-        </div>
-        <div id = "hidingSecondTime">
-        <div id ="windowDebilidades">
-          
-         <p>Insertaremos la tabla y debajo la información</p>
-        
-          <hr>
-        </div>
-      
-        <div id = "hidingThirdTime">
-          <div id="typesPokemonImg">
-            
-            <p>Tendremos las imagenes por aquí</p>
-            
-      
-            <hr>
-        </div>
-        <div id = "candy">
-          
-          <p>las imagenes con las evoluciones  </p>
-    
-      
-          <hr>
-        </div>
+       <div class="contenedor">
+          <div class="contenedor2" id="contFiltrar"></div>
+          <div class="contenedor2" id="contOrdenar"></div>
+          <div class="contenedor2" id="contCandy">
+            <input id = "nombre" type="search">
+            <button id = "btnBuscar" >Buscar</button>
+          </div>
+       </div>
       </div>
-  </div>
-  </div>
-  </div>
+    </div>
 
--->
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <script src="./data/pokemon/pokemon.js"></script>
     <!-- <script src="./data/steam/steam.js"></script> -->
