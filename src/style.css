@@ -27,6 +27,7 @@
     height: 100vh;
     flex-wrap: wrap;
     display: inline-flex;
+    
     /*
 	position: fixed;
 	width: 20%;
