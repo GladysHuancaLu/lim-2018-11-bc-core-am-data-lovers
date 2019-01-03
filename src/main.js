@@ -54,8 +54,8 @@ function mostrar() {
   containerlist.innerHTML = pokemon.mostrarTemplates(data);
 }
 // Llamando a la función agrupando debilidades
-const callgroups = pokemon.getGroupsWeakns(dataPokemon);
-const idWeakns = document.getElementById("debilidades");
+//const callgroups = pokemon.getGroupsWeakns(dataPokemon);
+//const idWeakns = document.getElementById("debilidades");
 
 
 const containerOrdenar = document.getElementById('contOrdenar');
@@ -82,7 +82,7 @@ const btnBuscar = document.getElementById('btnBuscar');
 const inputBuscar = document.getElementById('nombre');
 btnBuscar.addEventListener('click', () => {
   const data = pokemon.filterEvolution(dataPokemon, inputBuscar.value);
-  console.log(data);
+  //console.log(data);
   
   let list = '';
   for (let i = 0; i < data.length - 1; i++) {

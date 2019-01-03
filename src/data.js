@@ -183,11 +183,12 @@ const mostrarTemplates = (data) => {
      // }*/
 
 window.pokemon ={
-   obtenerTipoUnico,
-   filtrarTipo,
-   filterData,
-   sortData,
-   filterEvolution,
-   mostrarTemplates,
-   //getGroupsWeakns
+  ordering,
+  obtenerTipoUnico,
+  filtrarTipo,
+  filterData,
+  sortData,
+  filterEvolution,
+  mostrarTemplates
+//getGroupsWeakns
   }; 
