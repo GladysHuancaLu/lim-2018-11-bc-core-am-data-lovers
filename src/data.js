@@ -4,22 +4,6 @@ const example = () => {
 };
 window.example = example;
 */
-// const map1 = array1.map(x => x * 2);
-//const result = words.filter(word => word.length > 6);
-
-let newArr1 = [];
-const ordering = (data) => {
-  data.forEach((obj) => {
-    newArr1.push(obj.name);
-  });
-  const dataOrdenada = newArr1.sort();
- 
-  // const result = dataOrdenada.map((string) => { 
-  //   data.filter(elemento => elemento.name === string); 
-  // });
-}; 
-
-
 const obtenerTipoUnico = (arr) => {
   let newArr = [];
   let typesUniques = [];
@@ -33,21 +17,18 @@ const obtenerTipoUnico = (arr) => {
   }
   return typesUniques;
 };
-
 const filtrarTipo = (tipo, arr) => {
   const newArr2 = arr.filter((pokemon) => {
-    return ((pokemon.type[0] === tipo) || (pokemon.type[1] === tipo) || (pokemon.type[2] === tipo));
+    return ((pokemon.type[0] === tipo )||(pokemon.type[1] === tipo)||(pokemon.type[2] === tipo));
   });
   return newArr2;
 };
-
 const filterData = (data, condition) => {
   const newArr2 = data.filter((pokemon) => {
     return (pokemon.name === condition);
   });
   return newArr2;
 };
-
 /*
 const sortData = (data, sortBy, sortOrder) => {
   let dataOrdenada;
@@ -88,9 +69,11 @@ const sortData = (data, sortBy) => {
     dataOrdenada = data.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
-      } else if (a.name < b.name) {
+      }
+      else if (a.name < b.name) {
         return -1;
-      } else {
+      }
+      else {
         return 0;
       }
     });
@@ -99,9 +82,11 @@ const sortData = (data, sortBy) => {
     dataOrdenada = data.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
-      } else if (a.name < b.name) {
+      }
+      else if (a.name < b.name) {
         return -1;
-      } else {
+      }
+      else {
         return 0;
       }
     });
@@ -122,7 +107,6 @@ const sortData = (data, sortBy) => {
   }
   return dataOrdenada;
 };
-
 const filterEvolution = (data, name) => {
   const pokemonIngresado = pokemon.filterData(data, name);
   if (pokemonIngresado[0].hasOwnProperty('next_evolution') && pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
@@ -146,7 +130,6 @@ const filterEvolution = (data, name) => {
     return pokemon.sortData(filtradoEvoluciones.flat(), 'numberAsc');
   }
 };
-
 const mostrarTemplates = (data) => {
   let list = '';
   data.forEach((pokemones) => {
@@ -166,7 +149,7 @@ const mostrarTemplates = (data) => {
   return list;
 };
 
-/*const getGroupsWeakns = (weaknsArr, number) =>{
+const getGroupsWeakns = (weaknsArr, number) => {
   let weaknessesArray = [];
   let arrayGlobal = [];
   for (let i in weaknsArr) {
@@ -175,20 +158,16 @@ const mostrarTemplates = (data) => {
       arrayGlobal.push(weaknsArr[i].weaknesses);
     }
   }
-  return arrayGlobal;
-   // var pokecalcul = (numbPokeGroup) =>{
-      //   return `%${ Math.round((numbPokeGroup.length*100)/151)}.`;
-      //     };
-          // console.log(pokecalcul(oneWeaknesses));
-     // }*/
-
-window.pokemon ={
-  ordering,
+  return `${ Math.round((arrayGlobal.length * 100) / 151)}%`;
+};
+      
+      
+window.pokemon = {
   obtenerTipoUnico,
   filtrarTipo,
   filterData,
   sortData,
   filterEvolution,
-  mostrarTemplates
-//getGroupsWeakns
-  }; 
+  mostrarTemplates,
+  getGroupsWeakns
+};
