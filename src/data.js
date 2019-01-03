@@ -17,21 +17,18 @@ const obtenerTipoUnico = (arr) => {
   }
   return typesUniques;
 };
-
 const filtrarTipo = (tipo, arr) => {
   const newArr2 = arr.filter((pokemon) => {
     return ((pokemon.type[0] === tipo )||(pokemon.type[1] === tipo)||(pokemon.type[2] === tipo));
   });
   return newArr2;
 };
-
 const filterData = (data, condition) => {
   const newArr2 = data.filter((pokemon) => {
     return (pokemon.name === condition);
   });
   return newArr2;
 };
-
 /*
 const sortData = (data, sortBy, sortOrder) => {
   let dataOrdenada;
@@ -110,7 +107,6 @@ const sortData = (data, sortBy) => {
   }
   return dataOrdenada;
 };
-
 const filterEvolution = (data, name) => {
   const pokemonIngresado = pokemon.filterData(data, name);
   if (pokemonIngresado[0].hasOwnProperty('next_evolution') && pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
@@ -134,7 +130,6 @@ const filterEvolution = (data, name) => {
     return pokemon.sortData(filtradoEvoluciones.flat(), 'numberAsc');
   }
 };
-
 const mostrarTemplates = (data) => {
   let list = '';
   data.forEach((pokemones) => {
@@ -154,11 +149,25 @@ const mostrarTemplates = (data) => {
   return list;
 };
 
+const getGroupsWeakns = (weaknsArr, number) => {
+  let weaknessesArray = [];
+  let arrayGlobal = [];
+  for (let i in weaknsArr) {
+    weaknessesArray.push(weaknsArr[i].weaknesses);
+    if (weaknsArr[i].weaknesses.length === number) {
+      arrayGlobal.push(weaknsArr[i].weaknesses);
+    }
+  }
+  return `${ Math.round((arrayGlobal.length * 100) / 151)}%`;
+};
+      
+      
 window.pokemon = {
   obtenerTipoUnico,
   filtrarTipo,
   filterData,
   sortData,
   filterEvolution,
-  mostrarTemplates
+  mostrarTemplates,
+  getGroupsWeakns
 };
