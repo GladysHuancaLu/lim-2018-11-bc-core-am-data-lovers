@@ -17,15 +17,34 @@ const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
+
+const mostrarTemplates = (data) => {
+  let list = '';
+  data.forEach((pokemones) => {
+    const card = `
+    <div class ='card-link'>
+      <article class ='blog-card'>
+        <img class="post-image" src="${ pokemones.img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ pokemones.name }</h4>
+          <h3 class="post-category">${ pokemones.type }</h3>
+        </div>
+      </article>
+    </div>
+    `;
+    list = list + card;
+  });
+  return list;
+};
+
 const containerlist = document.getElementById('contFiltrar');
 listaTipos.addEventListener('change', mostrar);
 function mostrar() {
-  let list = '';
   const data = pokemon.filtrarTipo(listaTipos.value, dataPokemon);
   containerOrdenar.style.display = 'none';
   containerCandy.style.display = 'none';
   containerlist.style.display = 'inline-flex';
-  containerlist.innerHTML = pokemon.mostrarTemplates(data);
+  containerlist.innerHTML = mostrarTemplates(data);
 }
 const containerOrdenar = document.getElementById('contOrdenar');
 const listaOrdenar = document.getElementById('orderingPokemon');
@@ -35,7 +54,7 @@ function mostrarOrden() {
   containerlist.style.display = 'none';
   containerCandy.style.display = 'none';
   containerOrdenar.style.display = 'inline-flex';
-  containerOrdenar.innerHTML = pokemon.mostrarTemplates(data);
+  containerOrdenar.innerHTML = mostrarTemplates(data);
 }
 const containerCandy = document.getElementById('contCandy');
 containerCandy.style.display = 'none';
@@ -88,7 +107,7 @@ btnBuscar.addEventListener('click', () => {
   containerCandy.innerHTML = list;
 });
 
-
+/*
 const containerWeakns = document.getElementById('contWeakns');
 containerWeakns.style.display = 'none';
 const calculWeakns = document.getElementById('weaknesses');
@@ -131,6 +150,6 @@ function drawChart() {
   }
   containerWeakns.innerHTML = list ;
   containerWeakns.style.display = 'inline-flex';
-});
+}); */
 
 
