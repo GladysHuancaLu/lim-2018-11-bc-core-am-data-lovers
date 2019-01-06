@@ -46,11 +46,8 @@ const sortData = (data, sortBy) => {
       if (a.name > b.name) {
         return 1;
       }
-      else if (a.name < b.name) {
-        return -1;
-      }
       else {
-        return 0;
+        return -1;
       }
     });
     break;
@@ -59,11 +56,8 @@ const sortData = (data, sortBy) => {
       if (a.name > b.name) {
         return 1;
       }
-      else if (a.name < b.name) {
-        return -1;
-      }
       else {
-        return 0;
+        return -1;
       }
     });
     dataOrdenada = dataOrdenada.reverse();
@@ -86,31 +80,46 @@ const sortData = (data, sortBy) => {
 const filterEvolution = (data, name) => {
   const pokemonIngresado = filterData(data, name);
   let arrEvolucionesfinal = [];
+  let filtradoEvoluciones;
   if (pokemonIngresado[0].hasOwnProperty('next_evolution') && pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
     const arrPokemonEvolucion = pokemonIngresado[0].next_evolution;
     const arrPokemonDevolucion = pokemonIngresado[0].prev_evolution;
     let arrEvoluciones = (arrPokemonDevolucion.map(obj => obj.name)).concat(name);
     arrEvolucionesfinal = arrEvoluciones.concat(arrPokemonEvolucion.map(obj => obj.name));
-    let filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)})).flat(1);
-    return filtradoEvoluciones;
+    filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)}));
+   // return filtradoEvoluciones;
   } else if (pokemonIngresado[0].hasOwnProperty('next_evolution')) {
     const arrPokemonEvolucion = pokemonIngresado[0].next_evolution;
     arrEvolucionesfinal = (arrEvolucionesfinal.concat(name)).concat(arrPokemonEvolucion.map(obj => obj.name));
-    let filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)})).flat(1);
-    return filtradoEvoluciones;
-  } else if (pokemonIngresado[0].hasOwnProperty('prev_evolution')) {
+    filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)}));
+    //return filtradoEvoluciones;
+  } else /*if (pokemonIngresado[0].hasOwnProperty('prev_evolution'))*/ {
     const arrPokemonDevolucion = pokemonIngresado[0].prev_evolution;
     arrEvolucionesfinal = (arrPokemonDevolucion.map(obj => obj.name)).concat(name);
-    let filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)})).flat(1);
-    return filtradoEvoluciones;
+    filtradoEvoluciones = (arrEvolucionesfinal.map((string) => {return filterData(data, string)}));
+    //return filtradoEvoluciones;dff
   }
+ // arr1.reduce((acc, val) => acc.concat(val), []);// [1, 2, 3, 4]
+  return filtradoEvoluciones.reduce((acc, element) => acc.concat(element), []);
 };
+/*
+const input = [
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
+  {id: 4, name: 'Charmander', type: ['Fire']},
+  {id: 7, name: 'Squirtle', type: ['Water']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
+  {id: 25, name: 'Pikachu', type: ['Electric']}
+];
+const prueba = filterEvolution(input,"Metapod");
+console.log(prueba);
+*/
+
 
 const getGroupsWeakns = (weaknsArr, number) => {
-  let weaknessesArray = [];
   let arrayGlobal = [];
   for (let i in weaknsArr) {
-    weaknessesArray.push(weaknsArr[i].weaknesses);
     if (weaknsArr[i].weaknesses.length === number) {
       arrayGlobal.push(weaknsArr[i].weaknesses);
     }

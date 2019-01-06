@@ -14,75 +14,75 @@ describe('example', () => {
 
 
 const input = [
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 7, name: 'Squirtle', type: ['Water']},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 25, name: 'Pikachu', type: ['Electric']}
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']},
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']}
 ];
 
 const output = ['Grass', 'Poison', 'Fire', 'Water', 'Bug', 'Flying', 'Electric'];
 const output2 = [ 
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]}
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
 ];
 const output3 = [
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 7, name: 'Squirtle', type: ['Water']},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 25, name: 'Pikachu', type: ['Electric']}
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']},
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']}
 ];
 const output4 = [
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 25, name: 'Pikachu', type: ['Electric']},
-  {id: 7, name: 'Squirtle', type: ['Water']}
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']},
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']}
 ];
 const output5 = [
-  {id: 7, name: 'Squirtle', type: ['Water']},
-  {id: 25, name: 'Pikachu', type: ['Electric']},
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']},
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']},
 ];
 const output6 = [
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 7, name: 'Squirtle', type: ['Water']},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 25, name: 'Pikachu', type: ['Electric']}
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']},
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']}
 ];
 const output7 = [
-  {id: 25, name: 'Pikachu', type: ['Electric']},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}]},
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 7, name: 'Squirtle', type: ['Water']},
-  {id: 4, name: 'Charmander', type: ['Fire']},
-  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison']},
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']},
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 7, name: 'Squirtle', type: ['Water'], weaknesses: ['Electric', 'Grass']},
+  {id: 4, name: 'Charmander', type: ['Fire'], weaknesses: ['Water', 'Ground', 'Rock']},
+  {id: 1, name: 'Bulbasaur', type: ['Grass', 'Poison'], weaknesses: ['Fire', 'Ice', 'Flying', 'Psychic']}
 ]; 
 const output8 = [
-  {id: 25, name: 'Pikachu', type: ['Electric']}
+  {id: 25, name: 'Pikachu', type: ['Electric'], weaknesses: ['Ground']}
 ]; 
 const output9 = [
-  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}]}, 
-  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie' }]},
-  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}]},
-
+  {id: 10, name: 'Caterpie', type: ['Bug'], next_evolution:[{id: 11, name: 'Metapod'}, {id: 12, name: 'Butterfree'}], weaknesses: ['Fire', 'Flying', 'Rock']}, 
+  {id: 11, name: 'Metapod', type: ['Bug'], next_evolution:[{id: 12, name: 'Butterfree'}], prev_evolution:[{id: 10, name: 'Caterpie'}], weaknesses: ['Fire', 'Flying', 'Rock']},
+  {id: 12, name: 'Butterfree', type: ['Bug', 'Flying'], prev_evolution:[{id: 10, name: 'Caterpie' }, {id: 11, name: 'Metapod'}], weaknesses: ['Fire', 'Electric', 'Ice', 'Flying', 'Rock']}
 ]; 
+const output10 = '43%'; 
 
 describe('pokemon', () => {
   it('Debería ser un objeto', () => {
@@ -178,8 +178,11 @@ describe('pokemon', () => {
     it('debería retornar un array de objetos de los pokemones evolucionados', () => {
       expect(pokemon.filterEvolution(input,'Caterpie')).toEqual(output9);
     });
-    it('debería retornar un nuevo array, no modificar el original', () => {
-      expect(pokemon.filterEvolution(input,'Caterpie')).not.toEqual(input);
+    it('debería retornar un array de objetos de los pokemones evolucionados', () => {
+      expect(pokemon.filterEvolution(input,'Metapod')).toEqual(output9);
+    });
+    it('debería retornar un array de objetos de los pokemones evolucionados', () => {
+      expect(pokemon.filterEvolution(input,'Butterfree')).toEqual(output9);
     }); 
   });
 
@@ -188,12 +191,9 @@ describe('pokemon', () => {
   describe('pokemon.getGroupsWeakns', () => {
     it('debería ser una función', () => {
       expect(typeof pokemon.getGroupsWeakns).toBe('function');
-    });/*
-    it('debería retornar un array de objetos, con el valor de la propiedad name en mayusculas', () => {
-      expect(pokemon.obtenerTipoUnico(input)).toEqual(output);
     });
-    it('debería retornar un nuevo array, no modificar el original', () => {
-      expect(pokemon.obtenerTipoUnico(input)).not.toEqual(input);
-    }); */
+    it('debería retornar un string, con el valor del porcentaje de debilidades', () => {
+      expect(pokemon.getGroupsWeakns(input, 3)).toEqual(output10);
+    }); 
   }); 
 });
