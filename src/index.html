@@ -1,4 +1,126 @@
 <!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Data Lovers</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="fonts/icons.css" />
+
+    <script type = "text/javascript" src ="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="contendorPrincipal">
+
+      <div id = "firstWindowPokemon">
+
+           <button id="entrada" class="black">SIGUIENTE</button>
+
+      </div>
+
+      <div class="secondWindowPokemon" id = "secondWindowPokemon">
+
+        <header class="header">
+
+            <i id="imgTitle"></i>
+
+        </header>
+
+        <div class="menu">
+
+         <select class="select" id="orderingPokemon"><option >Ordenar por...</option>
+
+           <option value="numberAsc">Número inferior</option>
+
+           <option value="numberDesc">Número superior</option>
+
+           <option value="nameAsc">A-Z</option>
+
+           <option value="nameDesc">Z-A</option>
+
+         </select>
+
+         <select class="select" id="typesPokemon"><option >Elige tipo</option> </select>
+
+         <button class="select" id="candy">CARAMELOS Y EVOLUCIONES</button>
+
+         <button class="select" id="weaknesses">Debilidades</button>
+
+        </div>
+
+       <div class="contenedor">
+
+          <div class="contenedor2" id="contFiltrar"></div>
+
+          <div class="contenedor2" id="contOrdenar"></div>
+
+          <div class="contenedor2" id="contCandy">
+
+            <input id = "nombre" type="search">
+
+            <button id = "btnBuscar" >Buscar</button>
+
+          </div>
+
+          <div class="contenedor2" id ="contWeakns"></div>
+
+       </div>
+
+      </div>
+
+      <footer>
+
+        <div class="bodyFooter">
+
+          <div class="flex">
+
+            <p id="letters1" >ACERCA DE POKEMON</p>
+
+            <p id="letters2" >AYÚDANOS A MEJORAR</p>
+
+            <i id="icons1" class="fa fa-facebook-official"></i>
+
+            <i id="icons2" class="fa fa-twitter"></i>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+    <!-- <script src="./data/injuries/injuries.js"></script> -->
+
+    <script src="./data/pokemon/pokemon.js"></script>
+
+    <!-- <script src="./data/steam/steam.js"></script> -->
+
+    <!--<script src="./data/worldbank/worldbank.js"></script> -->
+
+    <!-- <script src="./data/lol/lol.js"></script> -->
+
+    <script src="data.js"></script>
+
+    <script src="main.js"></script>
+
+  </body>
+
+</html>
+
+
+
+<!--<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -34,13 +156,9 @@
           <div class="contenedor2" id ="contWeakns"></div>
        </div>
       </div>
-    </div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
+    </div> 
     <script src="./data/pokemon/pokemon.js"></script>
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!--<script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
-</html>
+</html>-->

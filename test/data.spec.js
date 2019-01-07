@@ -89,7 +89,6 @@ describe('pokemon', () => {
     expect(typeof pokemon).toBe('object');
   });
 
-
   describe('pokemon.obtenerTipoUnico', () => {
     it('debería ser una función', () => {
       expect(typeof pokemon.obtenerTipoUnico).toBe('function');
@@ -101,7 +100,6 @@ describe('pokemon', () => {
       expect(pokemon.obtenerTipoUnico(input)).not.toEqual(input);
     });
   });
-
 
   describe('pokemon.filtrarTipo', () => {
     it('debería ser una función', () => {
@@ -115,7 +113,6 @@ describe('pokemon', () => {
     });
   });
    
-
   describe('pokemon.copyData', () => {
     it('debería ser una función', () => {
       expect(typeof pokemon.copyData).toBe('function');
@@ -170,7 +167,6 @@ describe('pokemon', () => {
     });
   });
 
-
   describe('pokemon.filterEvolution', () => {
     it('debería ser una función', () => {
       expect(typeof pokemon.filterEvolution).toBe('function');
@@ -185,8 +181,6 @@ describe('pokemon', () => {
       expect(pokemon.filterEvolution(input,'Butterfree')).toEqual(output9);
     }); 
   });
-
-
 
   describe('pokemon.getGroupsWeakns', () => {
     it('debería ser una función', () => {
