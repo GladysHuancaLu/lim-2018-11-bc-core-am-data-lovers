@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="fonts/icons.css" />
     <script type = "text/javascript" src ="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="contendorPrincipal">
@@ -13,6 +14,9 @@
            <button id="entrada" class="black">SIGUIENTE</button>
       </div>
       <div class="secondWindowPokemon" id = "secondWindowPokemon">
+        <header class="header">
+            <i id="imgTitle"></i>
+        </header>
         <div class="menu">
          <select class="select" id="orderingPokemon"><option >Ordenar por...</option>
            <option value="numberAsc">Número inferior</option>
@@ -34,6 +38,16 @@
           <div class="contenedor2" id ="contWeakns"></div>
        </div>
       </div>
+      <footer>
+        <div class="bodyFooter">
+          <div class="flex">
+            <p id="letters1" >ACERCA DE POKEMON</p>
+            <P id="letters2" >AYÚDANOS A MEJORAR</P>
+            <i id="icons" class="fa fa-facebook-official"></i>
+            <i id="icons" class="fa fa-twitter"></i>
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <script src="./data/pokemon/pokemon.js"></script>

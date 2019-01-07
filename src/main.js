@@ -91,6 +91,7 @@ btnBuscar.addEventListener('click', () => {
 
 const containerWeakns = document.getElementById('contWeakns');
 containerWeakns.style.display = 'none';
+
 const calculWeakns = document.getElementById('weaknesses');
 calculWeakns.addEventListener('click', () => {
   google.charts.load('current', {'packages':['corechart', 'table', 'sankey']});

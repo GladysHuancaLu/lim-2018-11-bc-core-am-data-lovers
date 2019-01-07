@@ -151,7 +151,7 @@ const mostrarTemplates = (data) => {
 
 const getGroupsWeakns = (weaknsArr, number) => {
   let weaknessesArray = [];
-  let arrayGlobal = [];
+   arrayGlobal = [];
   for (let i in weaknsArr) {
     weaknessesArray.push(weaknsArr[i].weaknesses);
     if (weaknsArr[i].weaknesses.length === number) {
