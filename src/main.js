@@ -9,6 +9,7 @@ firstButton.addEventListener('click', function() {
   containerlist.style.display = 'none';
   containerCandy.style.display = 'none';
   containerOrdenar.style.display = 'none';
+  containerWeakns.style.display = 'none';
   secondWindow.style.display = 'inline-flex';
 });
 const dataPokemon = POKEMON.pokemon;
@@ -17,15 +18,35 @@ const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
   listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
 }
+
+const mostrarTemplates = (data) => {
+  let list = '';
+  data.forEach((pokemones) => {
+    const card = `
+    <div class ='card-link'>
+      <article class ='blog-card'>
+        <img class="post-image" src="${ pokemones.img }" />
+        <div class="article-details">
+          <h4 class="post-title">${ pokemones.name }</h4>
+          <h3 class="post-category">${ pokemones.type }</h3>
+        </div>
+      </article>
+    </div>
+    `;
+    list = list + card;
+  });
+  return list;
+};
+
 const containerlist = document.getElementById('contFiltrar');
 listaTipos.addEventListener('change', mostrar);
 function mostrar() {
-  let list = '';
   const data = pokemon.filtrarTipo(listaTipos.value, dataPokemon);
   containerOrdenar.style.display = 'none';
   containerCandy.style.display = 'none';
+  containerWeakns.style.display = 'none';
   containerlist.style.display = 'inline-flex';
-  containerlist.innerHTML = pokemon.mostrarTemplates(data);
+  containerlist.innerHTML = mostrarTemplates(data);
 }
 const containerOrdenar = document.getElementById('contOrdenar');
 const listaOrdenar = document.getElementById('orderingPokemon');
@@ -34,8 +55,9 @@ function mostrarOrden() {
   const data = pokemon.sortData(dataPokemon, listaOrdenar.value);
   containerlist.style.display = 'none';
   containerCandy.style.display = 'none';
+  containerWeakns.style.display = 'none';
   containerOrdenar.style.display = 'inline-flex';
-  containerOrdenar.innerHTML = pokemon.mostrarTemplates(data);
+  containerOrdenar.innerHTML = mostrarTemplates(data);
 }
 const containerCandy = document.getElementById('contCandy');
 containerCandy.style.display = 'none';
@@ -43,6 +65,7 @@ const btnCandy = document.getElementById('candy');
 btnCandy.addEventListener('click', () => {
   containerOrdenar.style.display = 'none';
   containerlist.style.display = 'none';
+  containerWeakns.style.display = 'none';
   containerCandy.style.display = 'inline-flex';
 });
 const btnBuscar = document.getElementById('btnBuscar');
@@ -94,6 +117,11 @@ containerWeakns.style.display = 'none';
 
 const calculWeakns = document.getElementById('weaknesses');
 calculWeakns.addEventListener('click', () => {
+  containerOrdenar.style.display = 'none';
+  containerlist.style.display = 'none';
+  containerCandy.style.display = 'none';
+  containerWeakns.style.display = 'inline-flex';
+  /*
   google.charts.load('current', {'packages':['corechart', 'table', 'sankey']});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
@@ -120,7 +148,7 @@ function drawChart() {
    };
    let chart = new google.visualization.ColumnChart(document.getElementById('contWeakns'));
    chart.draw(data, options);
-}
+} */
   let list = '';
   for (let i = 1; i <= 7; i++) {
     const element = `
@@ -131,7 +159,6 @@ function drawChart() {
     list += element;
   }
   containerWeakns.innerHTML = list ;
-  containerWeakns.style.display = 'inline-flex';
-});
+}); 
 
 
