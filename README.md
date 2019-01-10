@@ -50,7 +50,7 @@ Se priorizó las siguientes historias:
 
 Se utilizo papel y lápiz para idear una solucion que muestre una interfaz amigable.
 
-![Figma](./imagenes/readme-boceto1.png)
+![Figma](./imagenes/readme-boceto1.jpg)
 
 ## Diseño de Interfaz de Usuario
 (Prototipo de alta fidelidad)
