@@ -50,10 +50,15 @@ Se priorizó las siguientes historias:
 
 Se utilizo papel y lápiz para idear una solucion que muestre una interfaz amigable.
 
+![Figma](./imagenes/readme-boceto1.png)
 
 ## Diseño de Interfaz de Usuario
 (Prototipo de alta fidelidad)
-
+![Figma](./imagenes/readme-figma1.png)
+![Figma](./imagenes/readme-figma2.png)
+![Figma](./imagenes/readme-figma3.png)
+![Figma](./imagenes/readme-figma4.png)
+![Figma](./imagenes/readme-figma5.png)
 Se utilizó Figma para diseñar la interfaz e iterar segun los test de usabilidad
 [link a Figma](https://www.figma.com/file/OFdpWerGnAmOZmPcyGSwPTaG/POKEMON-GO?node-id=15%3A3)
 
