@@ -19,7 +19,7 @@ const obtenerTipoUnico = (arr) => {
 
 const filtrarTipo = (tipo, arr) => {
   const newArr2 = arr.filter((pokemon) => {
-    return ((pokemon.type[0] === tipo )||(pokemon.type[1] === tipo)||(pokemon.type[2] === tipo));
+    return ((pokemon.type[0] === tipo) || (pokemon.type[1] === tipo) || (pokemon.type[2] === tipo));
   });
   return newArr2;
 };

@@ -16,7 +16,8 @@ const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos = pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
-  listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
+  listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>
+    `;
 }
 
 const mostrarTemplates = (data) => {
