@@ -122,7 +122,7 @@ calculWeakns.addEventListener('click', () => {
   containerlist.style.display = 'none';
   containerCandy.style.display = 'none';
   containerWeakns.style.display = 'inline-flex';
-  /*
+  
   google.charts.load('current', {'packages':['corechart', 'table', 'sankey']});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
@@ -149,7 +149,7 @@ function drawChart() {
    };
    let chart = new google.visualization.ColumnChart(document.getElementById('contWeakns'));
    chart.draw(data, options);
-} */
+} 
   let list = '';
   for (let i = 1; i <= 7; i++) {
     const element = `

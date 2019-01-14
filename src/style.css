@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
     height: 100%;
 }
@@ -60,9 +61,39 @@ li {
 #entrada:hover {
     background-color: rgb(73, 115, 231);
     color: white;
+=======
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+     /*
+    font-family: helvetica Neue;
+    font-weight: lighter; 
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;
+    */
+}
+
+#contCandy2{
+    background-color: blue;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#firstWindowPokemon {
+    background-image: url(../imagenes/grassweekend.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    height:550px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 /*Este es el footer*/
 footer {
+<<<<<<< HEAD
     background: #476C46;
     flex: 0 0 auto;
     padding-left: 20px;
@@ -85,16 +116,49 @@ footer {
     text-decoration: underline white;
     max-width: 100%;
     margin-right: 20px;
+=======
+    width:100%;
+    max-width: 1500px;
+    background: #393A3B;
+    flex: 0 0 auto;
+    margin: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.flex{
+    display: flex; 
+    margin-left: 20px; 
+    justify-content:space-between ;
+}
+#letters1 {
+    font-style: italic;
+    font-size: 20px;
+    color: white;
+    text-decoration: underline white;
+    max-width: 300px;
+    margin-right: 40px;
+    margin-top: 20px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 #letters2{
     font-style: italic;
+<<<<<<< HEAD
     font-size: 14px;
     color: white;
     text-decoration: underline white;
     max-width: 100%;
     margin-right: 20px;
+=======
+    font-size: 20px;
+    color: white;
+    text-decoration: underline white;
+    max-width: 300px;
+    margin-right: 40px;
+    margin-top: 20px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 #icons {
+<<<<<<< HEAD
     font-size:20px;
     color: rgb(206, 38, 80);
     margin-bottom: 20px;
@@ -120,25 +184,77 @@ footer {
     background-size: cover;
     width: 100%;  
 }
+=======
+    font-size:50px;
+    color: rgb(206, 38, 80);
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
-
+#entrada {
+    font-size: 30px;
+    padding: 15px 32px;
+    border-radius: 12px;
+    border: 5px solid rgb(0, 0, 0);
+    background-color:rgba(144, 166, 56, 0.67);
+    margin-top: 470px;
+    margin-left: 190px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+#entrada:hover {
+    background-color: rgb(6, 156, 11);
+    color: white;
+}
+.secondWindowPokemon{
+   display: inline-flex;
+   width: 100%;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
+}
 .menu{
     background-color:rgba(57, 58, 59, 0.78);
    /* flex: 1 1 20%;*/
     width: 20%;
+<<<<<<< HEAD
     height: 90vh;
     flex-wrap: wrap;
     display: inline-flex;
     
+=======
+    height: 100vh;
+    flex-wrap: wrap;
+    display: inline-flex;
+    justify-content: center;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
     /*
     position: fixed;
     width: 20%;
     height: 100%;
     background-color: width: 20%;#2d2d2d;
+<<<<<<< HEAD
     */
 }
 
  
+=======
+    */
+}
+.contenedor{
+    background-image: url(../imagenes/pokemon-difuso2.jpg);
+    background-color: beige;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+   /* flex: 1 1 80%;*/
+   /*
+    background-image: url(../imagenes/grassweekend.jpg);
+    width: 80%;
+    justify-content: flex-end;
+    float: right;
+    */
+}
+
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 .contenedor2{
     width: 100%;
     display: inline-flex;
@@ -167,9 +283,18 @@ footer {
     height: 200px;
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     border-radius: 15px;
     background-image: url(../imagenes/dorado-cards.jpg);
     border: 5px solid rgb(187, 175, 6);
+=======
+    background-image: url(../imagenes/dorado-cards.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   /* background-color: rgb(245, 216, 234);*/
+    border-radius: 5%;
+   /* outline: 1px solid blueviolet;*/
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
     margin: 20px;
     /*
     background-color: #fff;
@@ -185,9 +310,16 @@ footer {
     display: flex;
     justify-content: center;
     background-color: rgb(245, 216, 234);
+<<<<<<< HEAD
     outline: 1px solid blueviolet;
     margin: 20px;
     text-align: center;
+=======
+   /* outline: 1px solid blueviolet;*/
+    margin: 20px;
+    text-align: center;
+    border-radius: 5%;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 .pseudoelemento::after{
     content: ">";
@@ -198,7 +330,10 @@ footer {
     right: -45%;
     color: blueviolet;
     font-weight: 900;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
    /* position: absolute;
     font-family: "icons";
     right: -40%;
@@ -212,7 +347,10 @@ footer {
     border-radius: 0.375rem;
     overflow: hidden;
     */
+<<<<<<< HEAD
     
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 .post-image {
     /*
@@ -221,7 +359,10 @@ footer {
     object-fit: cover;
     */
 }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 .article-details {
     /*
     padding: 1.5rem;
@@ -239,7 +380,10 @@ footer {
     border-bottom: 0.125rem solid #ebebeb;
     */
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
   .post-title {
       /*
     transition: color 0.3s ease;
@@ -254,6 +398,7 @@ footer {
       /*
       display: none;
      */
+<<<<<<< HEAD
   }
   @media screen and (max-width: 350px){
     #letters1 {
@@ -263,3 +408,7 @@ footer {
         font-size: 14px;
     }    
   }
+=======
+  } 
+
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
