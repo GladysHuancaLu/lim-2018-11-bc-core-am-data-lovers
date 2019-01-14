@@ -1,3 +1,67 @@
+<<<<<<< HEAD
+html{
+    height: 100%;
+}
+
+/*Todo este es diseño de la primera página.*/
+
+#firstWindowPokemon {
+    background-image: url(../imagenes/grassweekend2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    height: 90vh;
+  
+}
+.title1{
+    background-image: url(../imagenes/pokemongologo.png);
+    background-repeat: no-repeat;
+    width: 225px;
+    height: 180px
+}
+.welcomeText{
+    background-image: url(../imagenes/dorado-cards.jpg);
+    background-size: cover;
+    height: 35vh;
+    border-radius: 10%;
+    margin: 20px;
+    padding: 20px;
+    max-width: 400px;
+}
+    
+ul {
+    line-height: 1.5;
+    text-shadow: 3px 2px rgb(251, 255, 0);
+    font-style: oblique;
+    font-weight: bold;
+}
+li {
+    margin-top: 10px;
+}
+
+#entrada {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: Roboto;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+    padding: 15px 32px;
+    border-radius: 12px;
+    border: 5px solid rgb(187, 175, 6);
+    background-color:rgb(245, 241, 19);
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    transform: translate(30%,50%);
+    
+}
+#entrada:hover {
+    background-color: rgb(73, 115, 231);
+    color: white;
+=======
 *{
     margin: 0px;
     padding: 0px;
@@ -25,8 +89,34 @@
     background-attachment: fixed;
     background-position: center;
     height:550px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
+/*Este es el footer*/
 footer {
+<<<<<<< HEAD
+    background: #476C46;
+    flex: 0 0 auto;
+    padding-left: 20px;
+    height: 10vh;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  /*  margin-left: 20px; 
+    display: flex;
+    justify-content: space-between;*/
+}
+
+#letters1 {
+    font-style: italic;
+    font-size: 14px;
+    color: white;
+    text-decoration: underline white;
+    max-width: 100%;
+    margin-right: 20px;
+=======
     width:100%;
     max-width: 1500px;
     background: #393A3B;
@@ -48,19 +138,53 @@ footer {
     max-width: 300px;
     margin-right: 40px;
     margin-top: 20px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
-
 #letters2{
     font-style: italic;
+<<<<<<< HEAD
+    font-size: 14px;
+    color: white;
+    text-decoration: underline white;
+    max-width: 100%;
+    margin-right: 20px;
+=======
     font-size: 20px;
     color: white;
     text-decoration: underline white;
     max-width: 300px;
     margin-right: 40px;
     margin-top: 20px;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
+}
+#icons {
+<<<<<<< HEAD
+    font-size:20px;
+    color: rgb(206, 38, 80);
+    margin-bottom: 20px;
+    margin-left: 50px;
+   display: flex;
+   justify-content: flex-end;
+   margin-right: 20px;
 }
 
-#icons {
+
+
+/*esta pequeña sección son para todos los div*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*Este es el diseño de la segunda pantalla*/
+@media screen and (min-width: 200px) {
+#secondWindowPokemon {
+    background-image: url(../imagenes/pokemon-difuso2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;  
+}
+=======
     font-size:50px;
     color: rgb(206, 38, 80);
     margin-top: 10px;
@@ -85,20 +209,34 @@ footer {
 .secondWindowPokemon{
    display: inline-flex;
    width: 100%;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 .menu{
     background-color:rgba(57, 58, 59, 0.78);
    /* flex: 1 1 20%;*/
     width: 20%;
+<<<<<<< HEAD
+    height: 90vh;
+    flex-wrap: wrap;
+    display: inline-flex;
+    
+=======
     height: 100vh;
     flex-wrap: wrap;
     display: inline-flex;
     justify-content: center;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
     /*
     position: fixed;
     width: 20%;
     height: 100%;
     background-color: width: 20%;#2d2d2d;
+<<<<<<< HEAD
+    */
+}
+
+ 
+=======
     */
 }
 .contenedor{
@@ -116,23 +254,16 @@ footer {
     */
 }
 
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 .contenedor2{
     width: 100%;
     display: inline-flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 .select{
     width: 100%;
-    margin: 18px;
     height: 50px;
-    border-radius: 5%;
-    background-color: #3c3c3c;
-    color:white;
-    opacity: .6;
-    font-size: 1.1em;
-    border-bottom: 1px solid #323232;
     /*
     width: 100%;
     height:50px;
@@ -152,12 +283,18 @@ footer {
     height: 200px;
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
+    border-radius: 15px;
+    background-image: url(../imagenes/dorado-cards.jpg);
+    border: 5px solid rgb(187, 175, 6);
+=======
     background-image: url(../imagenes/dorado-cards.jpg);
     background-repeat: no-repeat;
     background-size: cover;
    /* background-color: rgb(245, 216, 234);*/
     border-radius: 5%;
    /* outline: 1px solid blueviolet;*/
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
     margin: 20px;
     /*
     background-color: #fff;
@@ -173,10 +310,16 @@ footer {
     display: flex;
     justify-content: center;
     background-color: rgb(245, 216, 234);
+<<<<<<< HEAD
+    outline: 1px solid blueviolet;
+    margin: 20px;
+    text-align: center;
+=======
    /* outline: 1px solid blueviolet;*/
     margin: 20px;
     text-align: center;
     border-radius: 5%;
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 .pseudoelemento::after{
     content: ">";
@@ -187,6 +330,10 @@ footer {
     right: -45%;
     color: blueviolet;
     font-weight: 900;
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
    /* position: absolute;
     font-family: "icons";
     right: -40%;
@@ -200,6 +347,10 @@ footer {
     border-radius: 0.375rem;
     overflow: hidden;
     */
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 }
 .post-image {
     /*
@@ -208,6 +359,10 @@ footer {
     object-fit: cover;
     */
 }
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
 .article-details {
     /*
     padding: 1.5rem;
@@ -225,6 +380,10 @@ footer {
     border-bottom: 0.125rem solid #ebebeb;
     */
   }
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
   .post-title {
       /*
     transition: color 0.3s ease;
@@ -239,5 +398,17 @@ footer {
       /*
       display: none;
      */
+<<<<<<< HEAD
+  }
+  @media screen and (max-width: 350px){
+    #letters1 {
+        font-size: 14px;
+    } 
+    #letters2 {
+        font-size: 14px;
+    }    
+  }
+=======
   } 
 
+>>>>>>> 626265b2ffcfd257fb0b40395dd01fcdb0157ce4
