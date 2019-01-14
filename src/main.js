@@ -16,7 +16,8 @@ const dataPokemon = POKEMON.pokemon;
 const arrayTiposUnicos = pokemon.obtenerTipoUnico(dataPokemon);
 const listaTipos = document.getElementById('typesPokemon');
 for (let i = 0; i < arrayTiposUnicos.length; i++) {
-  listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>`
+  listaTipos.innerHTML += `<option value= ${arrayTiposUnicos[i]}>${arrayTiposUnicos[i]}</option>
+    `;
 }
 
 const mostrarTemplates = (data) => {
@@ -114,6 +115,7 @@ btnBuscar.addEventListener('click', () => {
 
 const containerWeakns = document.getElementById('contWeakns');
 containerWeakns.style.display = 'none';
+
 const calculWeakns = document.getElementById('weaknesses');
 calculWeakns.addEventListener('click', () => {
   containerOrdenar.style.display = 'none';
