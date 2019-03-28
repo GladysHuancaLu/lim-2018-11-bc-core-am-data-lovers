@@ -1,6 +1,6 @@
 # POKEMON GO 
 
-[Link de gh-pages](https://gladyshuancalu.github.io/lim-2018-11-bc-core-am-data-lovers/src/)
+[Link de gh-pages]()
 
 ## Índice
 
