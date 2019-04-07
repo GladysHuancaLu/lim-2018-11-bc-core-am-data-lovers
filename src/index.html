@@ -8,56 +8,103 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="font/fontellocss" />
   <link rel="stylesheet" href="fonts/icons.css" />
-  <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
-  <div id="firstWindowPokemon">
-    <div class="title1"></div>
-    <div class="welcomeText">
-     <ul>
-      <li>Ven con nosotros y conoce un poco más del mundo pokémon.</li>
-      <li>Nosotros te ayudamos a iniciar esta gran aventura pokémon.</li>
-      <li>¿Quieres conocer más?</li>
-      <p>¡Haz click aquí!</p>
-     </ul>
-    </div>
-    <button id="entrada" class="black">SIGUIENTE</button>
-  </div>
-  <div class="secondWindowPokemon" id="secondWindowPokemon">
-    <header class="header">
-      <i id="imgheader"></i>
-    </header>
-    <div class="menu">
-      <select class="select" id="orderingPokemon">
+
+      <nav class="navbar navbar-expand-lg  fixed-top py-3" >
+          <div class="container">
+            <a>Pokedex</a>
+            <div class="collapse navbar-collapse"> 
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link " href="#filtrar" id="filtrar">Filtrar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="#ordenar" id="ordenar">Ordenar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="#evoluciones" id="evoluciones">Evoluciones</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="#estadisticas" id="estadisticas">Estadísticas</a>
+                    </li>
+                  </ul>
+      
+            </div>
+          </div>
+      
+        </nav>
+
+        <!-- <div id="firstWindowPokemon">
+            <div class="title1"></div>
+            <div class="welcomeText">
+             <ul>
+              <li>Ven con nosotros y conoce un poco más del mundo pokémon.</li>
+              <li>Nosotros te ayudamos a iniciar esta gran aventura pokémon.</li>
+              <li>¿Quieres conocer más?</li>
+              <p>¡Haz click aquí!</p>
+             </ul>
+            </div>
+            <button id="entrada" class="black">SIGUIENTE</button>
+          </div> -->
+
+
+    <header class="masthead" id="firstWindowPokemon">
+     <div class="imagen"> 
+        <div class="container h-100">
+            <div class="row h-100 align-items-center  text-left">
+              <div class="col-lg-8 align-items-center">
+                <h1 class="text-uppercase text-black font-weight-bold">"Conoce todo sobre tus pokemones preferidos"</h1>
+                <!-- <hr class="divider my-4"> -->
+                <p class="text-white-75 font-weight-ligth mb-5">Filtra, ordena y calcula estadisticas</p>
+                <button class="btn btn-primary  btn-lg" id="entrada" >EMPEZAR</button>
+
+              </div>
+              <img class="col-lg-3 align-items-start " src="imagenes/Logo_Pokémon_GO.png"  height="200px">
+
+            </div>
+          </div>
+      </div>
+      
+  </header>
+      
+  <div class="secondWindowPokemon row d-flex justify-content-between  " id="secondWindowPokemon"> 
+    <div class="menu row col-lg-3 d-flex align-items-center">
+      <select class="col-lg-12 form-control" id="orderingPokemon">
         <option>Ordenar por...</option>
         <option value="numberAsc">Número inferior</option>
         <option value="numberDesc">Número superior</option>
         <option value="nameAsc">A-Z</option>
         <option value="nameDesc">Z-A</option>
       </select>
-      <select class="select" id="typesPokemon">
+      <select class="col-lg-12 form-control" id="typesPokemon">
         <option>Elige tipo</option>
       </select>
-      <button class="select" id="candy">CARAMELOS Y EVOLUCIONES</button>
-      <button class="select" id="weaknesses">Debilidades</button>
+      <button class="col-lg-12 btn btn-primary" id="candy">CARAMELOS Y EVOLUCIONES</button>
+      <button class="col-lg-12 btn btn-primary" id="weaknesses">Debilidades</button>
     </div>
-    <div class="contenedor">
+    <div class="contenedor col-lg-9 d-flex align-items-start">
       <div class="contenedor2" id="contFiltrar"></div>
       <div class="contenedor2" id="contOrdenar"></div>
       <div class="contenedor2" id="contCandy">
-        <input id="nombre" type="search">
-        <button id="btnBuscar">Buscar</button>
+        <input class="form-control" id="nombre" type="search">
+        <button class="form-control" id="btnBuscar">Buscar</button>
       </div>
       <div class="contenedor2" id="contWeakns"></div>
     </div>
   </div>
   <footer>
-    <div class="bodyFooter">
       <div class="flex">
-        <a href="https://www.pokemon.com/es/" target="blank" id="letters1">ACERCA DE POKEMON</a>
-        <a href="#" id="letters2">AYÚDANOS A MEJORAR</a>
+        <div class="footer-links">
+         <a href="https://pokemongolive.com/es/post/" target="blank" id="letters1">ACTUALIZACIONES</a>
+         <a href="https://pokemongolive.com/es/events/" target="blank" id="letters2">EVENTOS</a>
+         <a href="https://niantic.helpshift.com/a/pokemon-go/?p=web&l=es" target="blank" id="letters3">ASISTENCIA</a>
+        </div>
         <div id="icons">
           <span class="icon-facebook"></span>
           <span class="icon-twitter"></span>
@@ -65,16 +112,20 @@
           <span class="icon-youtube"></span>
         </div>
       </div>
-    </div>
   </footer>
 
-  <!-- <script src="./data/injuries/injuries.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
-  <!-- <script src="./data/steam/steam.js"></script> -->
-  <!--<script src="./data/worldbank/worldbank.js"></script> -->
-  <!-- <script src="./data/lol/lol.js"></script> -->
+ 
+
+
+
   <script src="data.js"></script>
   <script src="main.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
